@@ -1,0 +1,32 @@
+### Default project gitignore
+
+## IDE Projectfiles
+/.idea/
+/.vscode/
+
+## Dynamic
+/.var/
+
+/temp/
+/tmp/
+/dist/
+/build/
+/**.cache
+
+## Library
+vendor
+/node_modules/
+/tools/*
+!/tools/phive
+
+## Env
+/.env
+/auth.json
+/.pm.toml
+
+## Other
+/*.DS_Store
+/.DS_Store
+/*.sql
+/TODO.md
+/results.md
