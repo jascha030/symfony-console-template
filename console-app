@@ -1,0 +1,36 @@
+#!/usr/bin/env php
+<?php
+
+/*
+ * This file is part of the jascha030/template package.
+ *
+ * (c) Jascha van Aalst <contact@jaschavanaalst.nl>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+declare(strict_types=1);
+
+use Jascha030\Project\Console\Command\DefaultCommand;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
+
+(static function (): void {
+    require_once file_exists(__DIR__ . '/vendor/autoload.php')
+      ? __DIR__ . '/vendor/autoload.php'
+      : __DIR__ . '/../../autoload.php';
+
+    $app = new Application('bb2gh', '0.1.0');
+    $app->add(new DefaultCommand());
+    $output = new ConsoleOutput();
+
+    try {
+        exit($app->run(new ArgvInput(), $output));
+    } catch (Exception $e) {
+        $output->writeln("<error>{$e->getMessage()}</error>");
+
+        exit(1);
+    }
+})();
