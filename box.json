@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/box-project/box/main/res/schema.json",
+  "main": "console-app",
+  "stub": true,
+  "alias": "console-app",
+  "chmod": "0755",
+  "compression": "GZ",
+  "output": "./bin/console-app.phar",
+  "directories": [
+    "src",
+    "vendor/symfony/console/Resources"
+  ],
+  "files": [
+    "composer.json",
+    "LICENSE.md"
+  ],
+  "finder": [
+    {
+      "name": "{\\.[php]}",
+      "exclude": [
+        "test",
+        "tests"
+      ],
+      "in": "vendor"
+    }
+  ],
+  "git-commit-short": "git_version",
+  "intercept": true,
+  "compactors": [
+    "KevinGH\\Box\\Compactor\\Php",
+    "KevinGH\\Box\\Compactor\\Json",
+    "KevinGH\\Box\\Compactor\\PhpScoper"
+  ],
+  "php-scoper": "scoper.php",
+  "exclude-composer-files": false,
+  "exclude-dev-files": true
+}
+
