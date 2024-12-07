@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phive xmlns="https://phar.io/phive">
   <phar name="phpunit" version="^10.0.0" installed="10.5.38" location="./tools/phpunit.phar" copy="false"/>
+  <phar name="humbug/php-scoper" version="^0.18.15" installed="0.18.15" location="./tools/php-scoper" copy="false"/>
+  <phar name="humbug/box" version="^4.6.2" installed="4.6.2" location="./tools/box" copy="false"/>
 </phive>
